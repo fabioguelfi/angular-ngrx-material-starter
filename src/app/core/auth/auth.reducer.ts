@@ -1,27 +1,11 @@
-import { Action } from '@ngrx/store';
+import { AuthState } from './auth.models';
+import { AuthActions, AuthActionTypes } from './auth.actions';
 
 export const AUTH_KEY = 'AUTH';
-
-export enum AuthActionTypes {
-  LOGIN = '[Auth] Login',
-  LOGOUT = '[Auth] Logout'
-}
-
-export class ActionAuthLogin implements Action {
-  readonly type = AuthActionTypes.LOGIN;
-}
-
-export class ActionAuthLogout implements Action {
-  readonly type = AuthActionTypes.LOGOUT;
-}
-
-export type AuthActions = ActionAuthLogin | ActionAuthLogout;
 
 export const initialState: AuthState = {
   isAuthenticated: false
 };
-
-export const selectorAuth = state => state.auth;
 
 export function authReducer(
   state: AuthState = initialState,
@@ -37,8 +21,4 @@ export function authReducer(
     default:
       return state;
   }
-}
-
-export interface AuthState {
-  isAuthenticated: boolean;
 }

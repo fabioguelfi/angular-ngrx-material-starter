@@ -9,9 +9,9 @@ import { LocalStorageService } from '../local-storage/local-storage.service';
 import {
   ActionAuthLogin,
   ActionAuthLogout,
-  AUTH_KEY,
   AuthActionTypes
-} from './auth.reducer';
+} from './auth.actions';
+import { AUTH_KEY } from './auth.reducer';
 
 @Injectable()
 export class AuthEffects {
